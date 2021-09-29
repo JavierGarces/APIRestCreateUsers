@@ -6,7 +6,9 @@ import javax.persistence.*;
 @Table(name = "phone")
 public class Telefono {
 	
+	@Id
 	private short number;
+	
 	private short citycode;
 	private short contrycode;
 	
@@ -32,9 +34,9 @@ public class Telefono {
 	@Override
     public String toString() {
         return 	"{" +
-                "'number':'" + number + "'" +
-                ", 'citycode':'" + citycode + "'" +
-                ", 'contrycode':'" + contrycode + "'" +
+                "\"number\":\"" + number + "\"" +
+                ", \"citycode\":\"" + citycode + "\"" +
+                ", \"contrycode\":\"" + contrycode + "\"" +
                 "}";
     }
 	

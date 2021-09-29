@@ -1,15 +1,18 @@
 package com.testJAGQ.testBCI.models;
 
 import java.sql.Date;
-import java.util.Calendar;
 import java.util.List;
+
+//import java.util.List;
 import javax.persistence.*;
 
 @Entity
 @Table(name = "user")
 public class Usuario {
 	
+	@Id
 	private String id;
+	
 	private String email;
 	private String name;
 	private String password;
@@ -20,15 +23,6 @@ public class Usuario {
 	private Boolean isactive;
 	
 	private List<Telefono> phones;
-	
-	public Usuario() {
-		this.setId("");
-		this.setCreated((Date)Calendar.getInstance().getTime());
-		this.setModified((Date)Calendar.getInstance().getTime());
-		this.setLast_login((Date)Calendar.getInstance().getTime());
-		this.setToken("");
-		this.setIsactive(true);
-	}
 	
 	public String getId() {
 		return id;
@@ -93,15 +87,15 @@ public class Usuario {
 	
 	@Override
     public String toString() {
-        return 	"'id':'" + id + "'"+
-                ", 'name':'" + name + "'"+
-                ", 'email':'" + email + "'" +
-                ", 'created':'" + created + "'" +
-                ", 'modified':'" + modified + "'" +
-                ", 'last_login':'" + last_login + "'" +
-                ", 'token':'" + token + "'" +
-                ", 'isactive':'" + isactive + "'" +
-                ", 'phones':[" + phones + "]";
+        return 	"\"id\":\"" + id + "\""+
+                ", \"name\":\"" + name + "\""+
+                ", \"email\":\"" + email + "\"" +
+                ", \"created\":\"" + created + "\"" +
+                ", \"modified\":\"" + modified + "\"" +
+                ", \"last_login\":\"" + last_login + "\"" +
+                ", \"token\":\"" + token + "\"" +
+                ", \"isactive\":\"" + isactive + "\"";/* +
+                ", \"phones\":[" + phones + "]";*/
     }
 	
 }
